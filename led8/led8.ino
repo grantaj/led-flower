@@ -1,7 +1,8 @@
 #include <Adafruit_NeoPixel.h>
 
 #define LED_PIN    6       // Digital pin connected to the LED strip
-#define LED_COUNT  8       // Number of LEDs in the strip
+#define LED_COUNT  120       // Number of LEDs in the strip
+#define DELAY_MSEC 100
 
 // Declare our NeoPixel strip object
 Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
@@ -18,7 +19,7 @@ void loop() {
   for(int i=0; i < LED_COUNT; i++) {
     strip.setPixelColor(i, strip.Color(255, 0, 0)); // Red color
     strip.show();
-    delay(500);
+    delay(DELAY_MSEC);
   }
 
   delay(1000);
@@ -27,7 +28,7 @@ void loop() {
   for(int i=0; i < LED_COUNT; i++) {
     strip.setPixelColor(i, strip.Color(0, 0, 0)); // Turn off LED
     strip.show();
-    delay(500);
+    delay(DELAY_MSEC);
   }
 
   delay(1000);
